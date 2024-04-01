@@ -1,5 +1,7 @@
 Step 1: Start importing relevant libraries like Polygon to get data from Polygon Library RestClient to get real-time data. Import database libraries SQLite and PyMongo to manipulate the data and insert it into the Database. 
+
 Step 2: Initiate SQLite and Mongo DB database connection and creation
+
 Step 3: Through RestClient functionality initialize the Object/Instance
 client_polygon = RESTClient('**KEY**')
 
@@ -7,14 +9,18 @@ Step 4: Create a loop with a range of 2 hours(7200 sec ) and call function “ge
 EURUSD = client_polygon.get_real_time_currency_conversion("EUR", "USD")
 
 Step 5: Get attribute data of Forex, timestamp of the transaction. 
+
 FXrate_EURUSD = EURUSD.converted
 FX_timestamp_EURUSD = datetime.utcfromtimestamp(EURUSD.last.timestamp / 1000)
 
 Step 6: Convert the timestamp data from UTC to date time string.
+
 TS24_EURUSD = FX_timestamp_EURUSD.strftime('%Y-%m-%d %H:%M:%S')
 
 Step 7: Repeat steps 4-6 for different Forex inputs replacing “EUR” with from value and “USD” with Value.
+
 Step 8: Capture the current time and convert the format to string.
+
  writing_time = datetime.utcnow()
  DB_time = writing_time.strftime('%Y-%m-%d %H:%M:%S')
 
